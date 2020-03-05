@@ -15,9 +15,9 @@ class CriaTabelaProdutos extends Migration
     {
         Schema::create('Produtos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('nome');
             $table->text('desc');
-            $table->double('preço');
+            $table->double('preco');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CriaTabelaProdutos extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Produtos');
     }
 }
