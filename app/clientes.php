@@ -13,7 +13,7 @@ class clientes extends Model
         'email',
         'telefone'
     ];
-    protected $tabla = 'clientes';
+    protected $table = 'clientes';
 
     public function vendas(){
         return $this->hasMany(vendas::class,'cliente_id');
