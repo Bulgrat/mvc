@@ -14,4 +14,9 @@ class produtosvenda extends Model
         'valor'
     ];
     protected $table = 'produtosvenda';
+
+    public function produtosVenda(){
+
+        return $this->hasOne(produtos::class,'id');
+    }
 }

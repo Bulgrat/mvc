@@ -18,4 +18,14 @@ class clientes extends Model
     public function vendas(){
         return $this->hasMany(vendas::class,'cliente_id');
     }
+
+    public function clienteProduto(){
+
+        return $this->hasManyThrough(produtosvenda::class,'id');
+    }
+
+    public function clienteVendedoros(){
+
+        return $this->hasManyThrough(vendedores::class,'id');
+    }
 }

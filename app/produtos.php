@@ -13,4 +13,6 @@ class produtos extends Model
         'preco'
     ];
     protected $table = 'produtos';
+
+    
 }

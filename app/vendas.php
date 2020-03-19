@@ -25,6 +25,11 @@ class vendas extends Model
 
         return $this->hasMany(produtosvenda::class,'venda_id');
     }
+    public function Venda(){
+
+        return $this->hasManyThrough(vendedores::class,'id');
+    }
+
 
 }
 
