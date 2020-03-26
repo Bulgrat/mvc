@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CriaTabelaVendas extends Migration
+class CriarTabelasUsuarios extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CriaTabelaVendas extends Migration
      */
     public function up()
     {
-        Schema::create('vendas', function (Blueprint $table) {
+        Schema::create('usuarios', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('cliente_id')->unsigned();
-            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
-            $table->date('data_da_venda');
-            $table->bigInteger('vendador_id')->unsigned();
+            $table->string('nome');
+            $table->string('email')->unique();
+            $table->string('senha');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CriaTabelaVendas extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vendas');
+        Schema::dropIfExists('usuarios');
     }
 }
