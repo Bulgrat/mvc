@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/avisos', function () {
+
+    return view('avisos', [
+        'nome' => 'Walter', 'mostrar' => true,
+        'avisos' => [
+            ['id' => 1, 'texto' => 'Aviso A'],
+            ['id' => 2, 'texto' => 'Aviso B'],
+            ['id' => 3, 'texto' => 'Aviso C']
+        ]
+    ]);
+
+});
